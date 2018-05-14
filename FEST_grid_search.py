@@ -56,8 +56,8 @@ for track, f in enumerate(files):
 
     results_dict = { 'radius':                  [],
                      'bit_length':              [],
-                     'depth_trees_mean':        [],
-                     'depth_trees_std':         [],
+                     'nodes_trees_mean':        [],
+                     'nodes_trees_std':         [],
                      'runtime_mean':            [],
                      'runtime_std':             [],
                      'memory_usage_std':        [],
@@ -92,11 +92,11 @@ for track, f in enumerate(files):
             roc_auc_scores = []
             mem_usage = []
             runtime = []
-            depth_trees = []
+            nodes_trees = []
             for a in range(5):
                 roc_auc_scores_repl = []
                 runtime_repl = []
-                depth_trees_repl     = []
+                nodes_trees_repl     = []
                 mem_usage_repl = []
 
                 i = 1
@@ -142,26 +142,26 @@ for track, f in enumerate(files):
                     mem_usage_repl.append(mem_max)
                     runtime_repl.append(toc-tic)
 
-                    # Read model's file to calculate tree depths
+                    # Read model's file to calculate tree nodes
                     with open('output/model%i' % (i)) as ff:
                         lines = ff.read().splitlines()
                         lines = lines[5:]
-                        dpt = []
+                        nodes = []
                         for j in lines:
-                            dpt_temp = len([s for s in j.split() if s.isdigit()])
-                            dpt.append(dpt_temp)
+                            nodes_temp = len([s for s in j.split() if s.isdigit()])
+                            nodes.append(nodes_temp)
 
-                    depth_trees_repl.append(np.mean(dpt))
+                    nodes_trees_repl.append(np.mean(nodes))
                     c += 1
                     i += 1
                 # Append mean measurements from the five replicates.
                 mem_usage.append(np.mean(mem_usage_repl))
-                depth_trees.append(np.mean(depth_trees_repl))
+                nodes_trees.append(np.mean(nodes_trees_repl))
                 runtime.append(np.mean(runtime_repl))
                 roc_auc_scores.append(np.mean(roc_auc_scores_repl))
 
-            results_dict['depth_trees_mean'].append(   round(np.mean(depth_trees), 3)    )
-            results_dict['depth_trees_std'].append(    round(np.std(depth_trees), 3)     )
+            results_dict['nodes_trees_mean'].append(   round(np.mean(nodes_trees), 3)    )
+            results_dict['nodes_trees_std'].append(    round(np.std(nodes_trees), 3)     )
             results_dict['runtime_mean'].append(       round(np.mean(runtime), 3)        )
             results_dict['runtime_std'].append(        round(np.std(runtime), 3)         )
             results_dict['roc_auc_score_mean'].append( round(np.mean(roc_auc_scores), 4) )

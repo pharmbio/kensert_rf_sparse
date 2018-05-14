@@ -110,7 +110,7 @@ for track,f in enumerate(files):
                              continue
                         else:
                              break
-                    print("hej")
+
                     clf = joblib.load('output/%s_SVC_model.sav' %f)
 
                     # Predict and obtain probabilities

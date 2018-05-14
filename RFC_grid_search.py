@@ -59,8 +59,8 @@ for track, f in enumerate(files):
     #Set up dictionary
     results_dict = { 'radius':                           [],
                      'bit_length':                       [],
-                     'depth_trees_mean':                 [],
-                     'depth_trees_std':                  [],
+                     'nodes_trees_mean':                 [],
+                     'nodes_trees_std':                  [],
                      'runtime_mean':                     [],
                      'runtime_std':                      [],
                      'memory_usage_std':                 [],
@@ -93,13 +93,13 @@ for track, f in enumerate(files):
             roc_auc_scores = []
             mem_usage      = []
             runtime        = []
-            depth_trees    = []
+            nodes_trees    = []
 
             # Five replicates
             for i in range(5):
                 roc_auc_scores_repl = []
                 runtime_repl        = []
-                depth_trees_repl    = []
+                nodes_trees_repl    = []
                 mem_usage_repl      = []
                 for train_index, test_index in kf.split(X, y):
                     X_test = X[test_index]
@@ -141,17 +141,17 @@ for track, f in enumerate(files):
                     mem_usage_repl.append(      mem_max )
                     roc_auc_scores_repl.append( roc_auc )
                     runtime_repl.append(        rtime   )
-                    depth_trees_repl.append(    nodes   )
+                    nodes_trees_repl.append(    nodes   )
 
                 # Append mean measurements from the five replicates.
                 mem_usage.append(      np.mean(mem_usage_repl)      )
-                depth_trees.append(    np.mean(depth_trees_repl)    )
+                nodes_trees.append(    np.mean(nodes_trees_repl)    )
                 runtime.append(        np.mean(runtime_repl)        )
                 roc_auc_scores.append( np.mean(roc_auc_scores_repl) )
 
             # Append results to dictionary.
-            results_dict['depth_trees_mean'  ].append(round(np.mean(depth_trees), 3))
-            results_dict['depth_trees_std'   ].append(round(np.std(depth_trees), 3))
+            results_dict['nodes_trees_mean'  ].append(round(np.mean(nodes_trees), 3))
+            results_dict['nodes_trees_std'   ].append(round(np.std(nodes_trees), 3))
             results_dict['runtime_mean'      ].append(round(np.mean(runtime), 3))
             results_dict['runtime_std'       ].append(round(np.std(runtime), 3))
             results_dict['roc_auc_score_mean'].append(round(np.mean(roc_auc_scores), 4))

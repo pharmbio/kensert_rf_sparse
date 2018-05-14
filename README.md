@@ -19,12 +19,12 @@ and four packages have to be installed before the scripts can run:
 (4) (numpy).
 
 Additionally, before running FEST_grid_search.py, FEST needs to be compiled:
-(1) http://lowrank.net/nikos/fest/
-(2) download
-(3) tar -zxvf fest.tar.gz
-(4) cd fest
-(5) make
-(6) move "festlearn" and "festclassify" to same folder as FEST_grid_search.py
+(1) http://lowrank.net/nikos/fest/;
+(2) download;
+(3) tar -zxvf fest.tar.gz;
+(4) cd fest;
+(5) make;
+(6) move "festlearn" and "festclassify" to same folder as FEST_grid_search.py.
 
 All Grid searches should now be able to run.
 

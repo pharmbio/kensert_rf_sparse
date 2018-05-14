@@ -53,9 +53,15 @@ grid_values = { 'gamma': np.array([0.000001, 0.000003, 0.00001, 0.00003, 0.0001,
                 'C':    np.array([0.01, 0.1, 1, 10, 100, 1000, 10000, 100000, 1000000, 10000000, 100000000]) }
 kf = KFold(n_splits=5, shuffle=True)
 
+# For keeping track of progression
+dataset = 1
+
 for track,f in enumerate(files):
+    # For keeping track of progression
+    runs = 1
+
     #Load data
-    data = load_svmlight_file( '../Datasets/' + f )
+    data = load_svmlight_file( 'Datasets/' + f )
     X, y = data[0], data[1]
     X = X[:,X.getnnz(0)>0]
 
@@ -124,6 +130,9 @@ for track,f in enumerate(files):
                     roc_auc_scores_repl.append(roc_auc)
                     runtime_repl.append(time)
 
+                    print('Current dataset: ' + str(runs) + "/500 runs completed")
+                    runs += 1
+
                 # Append mean measurements from the five replicates.
                 mem_usage.append(np.mean(mem_usage_repl))
                 runtime.append(np.mean(runtime_repl))
@@ -143,6 +152,9 @@ for track,f in enumerate(files):
             else:
                 results_dict['radius'].append(f[-5:-4])
                 results_dict['bit_length'].append(f[-16:-8])
+
+            print(str(dataset) + "/21 datasets completed")
+            dataset += 1
 
     df = pd.DataFrame.from_dict(results_dict)
     df.insert(loc=0, column='dataset', value=f)

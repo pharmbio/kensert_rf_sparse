@@ -48,10 +48,16 @@ files = [
 'dataset_svmlight-format_unhashed_r_3.csv'
 ]
 
+# For keeping track of progression
+dataset = 1
+
 #track for handling .csv file at the end
 for track, f in enumerate(files):
+    # For keeping track of progression
+    runs = 1
+
     #Load data
-    data = load_svmlight_file( '../Datasets/' + f )
+    data = load_svmlight_file( 'Datasets/' + f )
     X, y = data[0], data[1]
     # Remove columns that only contains zeros.
     X = X[:,X.getnnz(0)>0]
@@ -143,6 +149,9 @@ for track, f in enumerate(files):
                     runtime_repl.append(        rtime   )
                     nodes_trees_repl.append(    nodes   )
 
+                    print('Current dataset: ' + str(runs) + "/500 runs completed")
+                    runs += 1
+
                 # Append mean measurements from the five replicates.
                 mem_usage.append(      np.mean(mem_usage_repl)      )
                 nodes_trees.append(    np.mean(nodes_trees_repl)    )
@@ -168,6 +177,8 @@ for track, f in enumerate(files):
                 results_dict['radius'].append(f[-5:-4])
                 results_dict['bit_length'].append(f[-16:-8])
 
+            print(str(dataset) + "/21 datasets completed")
+            dataset += 1
 
     df = pd.DataFrame.from_dict(results_dict)
     df.insert(loc=0, column='dataset', value=f)

@@ -28,10 +28,10 @@ def atoi(text):
 def natural_keys(text):
     return [ atoi(c) for c in re.split('(\d+)', text) ]
 
-files = ['../Datasets/nr-ahr_nosalt.sdf.std_nodupl_class.sdf',
-         '../Datasets/nr-er_nosalt.sdf.std_nodupl_class.sdf',
-         '../Datasets/smiles_cas_N6512.sdf.std_class.sdf',
-         '../Datasets/sr-mmp_nosalt.sdf.std_nodupl_class.sdf']
+files = ['Datasets/nr-ahr_nosalt.sdf.std_nodupl_class.sdf',
+         'Datasets/nr-er_nosalt.sdf.std_nodupl_class.sdf',
+         'Datasets/smiles_cas_N6512.sdf.std_class.sdf',
+         'Datasets/sr-mmp_nosalt.sdf.std_nodupl_class.sdf']
 
 count = 0
 for f in files:

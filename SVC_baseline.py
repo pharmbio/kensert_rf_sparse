@@ -13,7 +13,7 @@ from sklearn.externals import joblib
 
 arr = np.array(sys.argv[1].split(',')).T.astype(int)
 arr2 = np.array(sys.argv[5].split(',')).T.astype(int)
-data = load_svmlight_file( '../Datasets/' + sys.argv[4] )
+data = load_svmlight_file( 'Datasets/' + sys.argv[4] )
 X, y = data[0], data[1]
 X = X[:,X.getnnz(0)>0]
 y[y==0] = -1

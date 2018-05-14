@@ -153,8 +153,8 @@ for track,f in enumerate(files):
                 results_dict['radius'].append(f[-5:-4])
                 results_dict['bit_length'].append(f[-16:-8])
 
-            print(str(dataset) + "/21 datasets completed")
-            dataset += 1
+    print(str(dataset) + "/21 datasets completed")
+    dataset += 1
 
     df = pd.DataFrame.from_dict(results_dict)
     df.insert(loc=0, column='dataset', value=f)

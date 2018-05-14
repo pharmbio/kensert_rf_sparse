@@ -12,11 +12,12 @@ gen_morgan.py should now run, and will output 21 x 4 .csv files with different M
 ## Run grid search
 Before running either RFC_grid_search.py, SVC_grid_search.py or FEST_grid_search.py, file names inside these scripts have to be changed to the file names of the generated datasets,
 
-and four packages have to be installed before the scripts can run:
+and five packages have to be installed before the scripts can run:
 (1) memory_profiler: "pip install -U memory_profiler" for example;
-(2) Scikit-learn: "pip install -U scikit-learn" for example;
-(3) (pandas);
-(4) (numpy).
+(2) scipy: "pip install scipy" for example;
+(3) Scikit-learn: "pip install -U scikit-learn" for example;
+(3) pandas;
+(4) numpy.
 
 Additionally, before running FEST_grid_search.py, FEST needs to be compiled:
 (1) http://lowrank.net/nikos/fest/;

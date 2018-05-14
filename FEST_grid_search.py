@@ -159,7 +159,8 @@ for track, f in enumerate(files):
                     c += 1
                     i += 1
 
-                    print('Current dataset: ' + str(runs) + "/625 runs completed")
+                    if runs % 5 == 0:
+                        print('Current dataset: ' + str(runs) + "/625 runs completed")
                     runs += 1
                 # Append mean measurements from the five replicates.
                 mem_usage.append(np.mean(mem_usage_repl))

@@ -148,8 +148,8 @@ for track, f in enumerate(files):
                     roc_auc_scores_repl.append( roc_auc )
                     runtime_repl.append(        rtime   )
                     nodes_trees_repl.append(    nodes   )
-
-                    print('Current dataset: ' + str(runs) + "/625 runs completed")
+                    if runs % 5 == 0:
+                        print('Current dataset: ' + str(runs) + "/625 runs completed")
                     runs += 1
 
                 # Append mean measurements from the five replicates.

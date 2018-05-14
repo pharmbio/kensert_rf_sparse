@@ -149,7 +149,7 @@ for track, f in enumerate(files):
                     runtime_repl.append(        rtime   )
                     nodes_trees_repl.append(    nodes   )
 
-                    print('Current dataset: ' + str(runs) + "/500 runs completed")
+                    print('Current dataset: ' + str(runs) + "/625 runs completed")
                     runs += 1
 
                 # Append mean measurements from the five replicates.

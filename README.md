@@ -42,4 +42,4 @@ finally:
 All Grid searches should now be able to run.
 
 ## Grid search outputs
-When modelling is completed for a dataset, results will be "appended" to a .csv file in main folder.
+When modelling is completed for a dataset, results will be outputted to a .csv file in main folder.

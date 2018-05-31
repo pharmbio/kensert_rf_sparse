@@ -1,5 +1,12 @@
 # How to run the grid search
-Python 3.63 was used.
+Versions used:
+Python 3.63;
+Rdkit 2017-09.1;
+pandas 0.20.3;
+numpy 1.13.3;
+memory_profiler 0.48.0;
+scikit-learn 0.19.1;
+scipy 0.19.1.
 
 ## Generate Morgan fingerprints
 First, (1) RDKit, (2) Pandas and (3) Numpy have to be installed:

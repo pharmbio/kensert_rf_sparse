@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/132778041.svg)](https://zenodo.org/badge/latestdoi/132778041)
+
 # Datasets
 The data in “kensert_rf_sparse/Datasets/” is obtained from the tox21 challenge (https://tripod.nih.gov/tox21/challenge/data.jsp) and from the paper “Benchmark Data Set for in Silico Prediction of Ames Mutagenicity” by Hansen and co-workers. The data has been normalized, i e. standardized using the standardization procedure IMI eTOX project standardizer (version 0.1.7. https://pypi.python.org/pypi/standardiser) and MolVS standardizer (version 0.0.9. https://pypi.python.org/pypi/MolVS).
 

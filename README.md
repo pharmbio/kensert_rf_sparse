@@ -20,9 +20,7 @@ First, (1) RDKit, (2) Pandas and (3) Numpy have to be installed:<br/>
 gen_morgan.py should now run, and will output 84 .csv files; 21 different Morgan fingerprints for each of the four SDFs.
 
 ## Run grid search
-Before running either RFC_grid_search.py, SVC_grid_search.py or FEST_grid_search.py, file names inside these scripts have to be changed to the file names of the generated datasets,
-
-and five packages have to be installed:
+Before running either RFC_grid_search.py, SVC_grid_search.py or FEST_grid_search.py, file names inside these scripts have to be changed to the file names of the generated datasets --- and five packages have to be installed:<br/>
 (1) memory_profiler: "pip install -U memory_profiler" for example;<br/>
 (2) scipy: "pip install scipy" for example;<br/>
 (3) Scikit-learn: "pip install -U scikit-learn" for example;<br/>

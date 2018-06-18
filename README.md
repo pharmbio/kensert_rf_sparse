@@ -11,7 +11,7 @@ memory_profiler 0.48.0;<br/>
 scikit-learn 0.19.1;<br/>
 scipy 0.19.1.<br/>
 
-## Generate Morgan fingerprints
+### Generate Morgan fingerprints
 First, (1) RDKit, (2) Pandas and (3) Numpy have to be installed:<br/>
 (1) http://www.rdkit.org/docs/Install.html;<br/>
 (2) "pip install pandas" for example;<br/>
@@ -19,7 +19,7 @@ First, (1) RDKit, (2) Pandas and (3) Numpy have to be installed:<br/>
 
 gen_morgan.py should now run, and will output 84 .csv files; 21 different Morgan fingerprints for each of the four SDFs.
 
-## Run grid search
+### Run grid search
 Before running either RFC_grid_search.py, SVC_grid_search.py or FEST_grid_search.py, file names inside these scripts have to be changed to the file names of the generated datasets --- and five packages have to be installed:<br/>
 (1) memory_profiler: "pip install -U memory_profiler" for example;<br/>
 (2) scipy: "pip install scipy" for example;<br/>
@@ -27,7 +27,7 @@ Before running either RFC_grid_search.py, SVC_grid_search.py or FEST_grid_search
 (4) pandas;<br/>
 (5) numpy.
 
-Additionally, before running FEST_grid_search.py, FEST needs to be compiled:
+Additionally, before running FEST_grid_search.py, FEST needs to be compiled:<br/>
 (1) http://lowrank.net/nikos/fest/;<br/>
 (2) download;<br/>
 write:<br/>
@@ -39,5 +39,5 @@ finally:<br/>
 
 All Grid searches should now be able to run.
 
-## Grid search outputs
+### Grid search outputs
 When modelling is completed for a dataset, results will be outputted to a .csv file in main folder.
